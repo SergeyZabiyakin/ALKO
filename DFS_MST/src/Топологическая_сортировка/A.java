@@ -13,16 +13,16 @@ public class A {
         int count = 0;
         int m = scanner.nextInt();
         int[] in = new int[n]; // кол-во входящих вершин
-        LinkedList<Integer>[] graf = new LinkedList[n];
+        LinkedList<Integer>[] graph = new LinkedList[n];
 
         for (int i = 1; i < n; i++) {
-            graf[i] = new LinkedList();
+            graph[i] = new LinkedList();
         }
 
         for (int i = 0; i < m; i++) {
             int begin = scanner.nextInt();
             int end = scanner.nextInt();
-                graf[begin].add(end);
+                graph[begin].add(end);
                 in[end]++;
         }
         Stack<Integer> stack = new Stack<>();
@@ -35,7 +35,7 @@ public class A {
             int node = stack.pop();
             count++;
             sb.append(node).append(' ');
-            for (int i : graf[node]) {
+            for (int i : graph[node]) {
                 in[i]--;
                 if (in[i] == 0) stack.add(i);
             }
