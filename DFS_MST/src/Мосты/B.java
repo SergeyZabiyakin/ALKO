@@ -1,18 +1,15 @@
 package Мосты;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class B {
     private static boolean[] mark;
     private static int[] in;
     private static int[] up;
     private static int time = 0;
-    private static LinkedList<Edge>[] graph;
-    private static StringBuilder sb = new StringBuilder();
-    private static List<Integer> list = new LinkedList<>();
+    private static List<Edge>[] graph;
+    private static final StringBuilder sb = new StringBuilder();
+    private static final List<Integer> list = new ArrayList<>();
     private static int out = 0;
 
     public static void main(String[] args) {
