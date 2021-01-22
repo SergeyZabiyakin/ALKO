@@ -34,7 +34,7 @@ public class F {
         }
         for (int i = 0; i < n; i++) {
             if (!mark[i]) {
-                dfs(i, i);
+                dfs(i);
             }
         }
         for (int v = 0; v < n; v++) {
@@ -70,7 +70,7 @@ public class F {
         }
     }
 
-    private static void dfs(int v, int u) {
+    private static void dfs(int v) {
         stack.add(v);
         inStack[v] = true;
         mark[v] = true;
@@ -78,7 +78,7 @@ public class F {
         in[v] = up[v];
         for (int vu : graph[v]) {
             if (!mark[vu]) {
-                dfs(vu, v);
+                dfs(vu);
                 up[v] = Math.min(up[v], up[vu]);
             } else if (inStack[vu]) {
                 up[v] = Math.min(up[v], in[vu]);
